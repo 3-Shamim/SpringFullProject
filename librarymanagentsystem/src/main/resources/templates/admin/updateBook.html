@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="full-content">
+        <nav th:replace="fragment/adminFragments :: adminNav">
+        </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <form action="" method="POST" th:object="${book}">
+                    <div class="form-group">
+                        <label th:for="bookName">Book Name</label>
+                        <input class="form-control" th:field="*{bookName}"/>
+                        <span class="errors" th:errors="*{bookName}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="author">Author</label>
+                        <input class="form-control" th:field="*{author}"/>
+                        <span class="errors" th:errors="*{author}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="edition">Edition</label>
+                        <input class="form-control" th:field="*{edition}"/>
+                        <span class="errors" th:errors="*{edition}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="quantity">Quantity</label>
+                        <input class="form-control" th:field="*{quantity}"/>
+                        <span class="errors" th:errors="*{quantity}"></span>
+                    </div>
+
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Update Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

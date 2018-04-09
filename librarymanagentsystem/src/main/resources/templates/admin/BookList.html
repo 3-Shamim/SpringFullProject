@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="full-content">
+        <nav th:replace="fragment/adminFragments :: adminNav">
+        </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <table class="table table-bordered ">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Book Id</th>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Edition</th>
+                            <th>Activity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="books : ${bookList}">
+                        <td th:text="${books.bookId}"></td>
+                        <td th:text="${books.bookName}"></td>
+                        <td th:text="${books.author}"></td>
+                        <td th:text="${books.edition}"></td>
+                        <td th:text="${books.activity}"></td>
+                        <td>
+                            <a th:href="@{'/admin/bookEdit/' + ${books.bookId}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                            <a th:href="@{'/admin/bookDelete/' + ${books.bookId}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

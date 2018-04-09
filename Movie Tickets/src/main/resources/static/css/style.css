@@ -1,0 +1,190 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #dde1e2;
+}
+
+.errors {
+    color: #ff0000;
+}
+
+/*------------ Bootstrap Changes ---------------*/
+.btn-outline-success {
+    color: #2ed573;
+    background: transparent none;
+    border-color: #2ed573;
+}
+.btn-outline-success:hover {
+    color: #ffffff;
+    background-color: #2ed573;
+    border-color: #2ed573;
+}
+
+.input-append.date .add-on i, .input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+/*----------- Font Awesome Changes -------------*/
+.fas,
+.fa {
+    color: #2ed573;
+    font-size: 24px;
+}
+.fas:hover,
+.fa:hover {
+    color: #ffffff;
+}
+
+/*------------ Login Form ------------*/
+.loginForm {
+    width: 40%;
+    margin: 200px auto;
+    background: #f5f6fa;
+    padding: 20px;
+}
+
+.login-title {
+    text-align: center;
+}
+.login-title h4{
+    font-size: 32px;
+    margin: 10px;
+}
+
+.login-form {
+
+}
+
+/*---------- Header ------------*/
+.header {
+    min-height: 80px;
+    background-color: #0e1038;
+    padding: 20px 50px;
+    overflow: hidden;
+}
+.logo {
+    width: 20%;
+    float: left;
+}
+.authorization {
+    width: 80%;
+    float: right;
+}
+.authorized {
+    text-align: right;
+}
+
+/*------------- Navigation -------------*/
+.mainNavigation {
+    padding: 10px 0;
+}
+.mainNavigation ul{
+    margin: 0;
+    padding: 0;
+}
+.mainNavigation ul li{
+    list-style: none;
+}
+.mainNavigation ul li a{
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.mainNavigation ul li a:hover {
+    background-color: #2ed573;
+}
+
+
+/*------------- Body Content -----------*/
+.mainBody {
+    overflow: hidden;
+}
+.navigation {
+    width: 20%;
+    min-height: 500px;
+    float: left;
+    background-color: #0e1038;
+    margin: .2% 0 0 0;
+}
+.mainContent {
+    width: 79.6%;
+    min-height: 500px;
+    float: right;
+    background-color: #0e1038;
+    margin: .2% 0 0 .2%;
+}
+
+/*-------------- Movies --------------*/
+.moviesContent {
+    padding: 10px 32px;
+}
+.moviesTop {
+    text-align: right;
+    margin-bottom: 10px;
+}
+.moviesBottom {
+
+}
+.moviesBottom table{
+    color: #ffffff;
+}
+.posterImage img {
+    width: 100px;
+    height: auto;
+}
+
+/*--------------  Add Movie --------------*/
+.addMoviesContent {
+    padding: 20px 32px;
+}
+.addMoviesContent form {
+    width: 70%;
+    margin: auto;
+}
+/*--------- Movie Details ------------*/
+.movieDetailsContent {
+    text-align: center;
+    padding: 20px 32px;
+}
+.movieImage img{
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+.movieDetails {
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------- Footer ------------*/
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0e1038;
+    margin-top: 4px;
+}
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="Fragments/fragment :: head"></head>
+<body>
+
+<div class="mainBody">
+    <div th:replace="Fragments/fragment :: header"></div>
+
+    <div class="navigation">
+        <nav th:replace="Fragments/fragment :: mainNavigation"></nav>
+    </div>
+    <div class="mainContent">
+       <div class="moviesContent">
+           <div class="moviesTop">
+               <a class="btn btn-outline-success" href="/admin/addmovie">Add Movie</a>
+           </div>
+           <div class="moviesBottom">
+               <table class="table table-bordered ">
+                   <thead class="thead-default">
+                   <tr>
+                       <th>Movie Id</th>
+                       <th>Movie Name</th>
+                       <th>Movie Details</th>
+                       <th>Poster</th>
+                       <th>Trailer</th>
+                       <th>Action</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="movies : ${movieList}">
+                       <td th:text="${movies.id}"></td>
+                       <td th:text="${movies.name}"></td>
+                       <td >
+                           <a th:href="@{'/admin/movieDetails/' + ${movies.id}}"><i class="fas fa-info-circle"></i></a>
+                       </td>
+                       <td class="posterImage" text="Poster"><img src="/image/default-thumbnail.jpg" alt="Poster"></td>
+                       <td text="Trailer"></td>
+                       <td>
+                           <a th:href="@{'/admin/movieEdit/' + ${movies.id}}"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                           <a th:href="@{'/admin/movieDelete/' + ${movies.id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                       </td>
+                   </tr>
+                   </tbody>
+               </table>
+           </div>
+       </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer th:replace="Fragments/fragment :: footer"></footer>
+
+</body>
+</html>

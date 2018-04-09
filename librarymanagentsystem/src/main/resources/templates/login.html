@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="loginForm">
+        <div class="loginTitle">
+            <h2 class="headerTitle">Login Form</h2>
+        </div>
+        <div class="alert alert-danger" th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div class="alert alert-warning" th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form method="POST" th:action="@{/login}" class="form-block mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username"/>
+            <br/>
+            <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password"/>
+            <br/>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button>
+        </form>
+        <a href=""> Forgot Password? </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer th:replace="fragment/fragments :: footer"></footer>
+
+</main>
+
+
+</body>
+</html>

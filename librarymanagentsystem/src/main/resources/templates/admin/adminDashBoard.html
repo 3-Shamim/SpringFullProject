@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+    <div class="full-content">
+       <nav th:replace="fragment/adminFragments :: adminNav">
+       </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <div class="dashBoardFull">
+                    <div class="dashBordItem col-3-1">
+                        <h2 th:text="${totalBook}"></h2>
+                        <h3>Total Books</h3>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <div class="dashBordItem col-3-1" >
+                        <h2 th:text="${totalUser}"></h2>
+                        <h3>Total User</h3>
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <div class="dashBordItem col-3-1" >
+                        <h2 th:text="${totalIssuedBook}"></h2>
+                        <h3>Total Issued Book</h3>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <div class="dashBordItem col-3-1" >
+                        <h3>This feature will be added!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

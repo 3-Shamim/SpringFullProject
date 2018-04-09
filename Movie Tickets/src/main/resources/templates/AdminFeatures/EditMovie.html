@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="Fragments/fragment :: head"></head>
+<body>
+
+<div class="mainBody">
+    <div th:replace="Fragments/fragment :: header"></div>
+
+    <div class="navigation">
+        <nav th:replace="Fragments/fragment :: mainNavigation"></nav>
+    </div>
+    <div class="mainContent">
+        <div class="addMoviesContent">
+            <form action="" method="POST" th:Object="${movie}">
+                <div class="form-group">
+                    <input class="form-control" th:field="*{name}" placeholder="Movie Name"/>
+                    <span class="errors" th:errors="*{name}"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" th:field="*{length}" placeholder="Movie Length"/>
+                    <span class="errors" th:errors="*{length}"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" th:field="*{director}" placeholder="Director Name"/>
+                    <span class="errors" th:errors="*{director}"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" th:field="*{actor}" placeholder="Actor Name"/>
+                    <span class="errors" th:errors="*{actor}"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" th:field="*{description}" placeholder="Movie Description"/>
+                    <span class="errors" th:errors="*{description}"></span>
+                </div>
+                <div class="form-group">
+                    <input id="dateRangePicker" th:field="*{date}" class="form-control" placeholder="Release Date Format mm/dd/yyyy"/>
+                    <span class="errors" th:errors="*{date}"></span>
+                </div>
+                <div class="buttonGroup">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Modify Movie</button>
+                    <a href="/admin/movies" class="btn btn-outline-danger my-2 my-sm-0" >Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer th:replace="Fragments/fragment :: footer"></footer>
+
+</body>
+</html>

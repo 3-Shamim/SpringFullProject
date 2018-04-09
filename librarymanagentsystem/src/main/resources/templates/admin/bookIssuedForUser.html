@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="full-content">
+        <nav th:replace="fragment/adminFragments :: adminNav">
+        </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <div class="alert alert-danger" th:if="${bookStatus != null}" th:text="${bookStatus}">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form th:action="@{'/admin/bookIssuedForUsers/' + ${userId}}" method="post">
+                            <div class="form-group">
+                                <label for="bookSearch">Search Book</label>
+                                <input class="form-control" type="text" id="bookSearch" name="bookSearch"/>
+                                <span class="searchFieldCheck" th:if="${searchFieldCheck != null}" th:text="${searchFieldCheck}"></span>
+                            </div>
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search Book</button>
+                        </form>
+                    </div>
+                    <div class="col cancelButton">
+                        <a class="btn btn-outline-danger my-2 my-sm-0" href="/admin/issueBook"> Cancel </a>
+                    </div>
+                </div>
+                <div th:if="${bookId} != null"  class="issueTable">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Id</th>
+                            <th th:text="${bookId}"></th>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th th:text="${bookName}"></th>
+                        </tr>
+                        <tr>
+                            <th>Author</th>
+                            <th th:text="${author}"></th>
+                        </tr>
+                        <tr>
+                            <th>Edition</th>
+                            <th th:text="${edition}"></th>
+                        </tr>
+                        <tr>
+                            <th>Quantity</th>
+                            <th th:text="${quantity}"></th>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <th th:text="${activity}"></th>
+                        </tr>
+                    </table>
+                    <a th:if="${activity == true}" class="btn btn-outline-primary my-2 my-sm-0"
+                       th:href="@{'/admin/addBookForUser/' + ${userId} + '/' + ${bookId}}">Book Issued</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

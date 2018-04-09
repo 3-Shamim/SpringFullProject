@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text=""></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.cssstyle.css"/>
+</head>
+<body>
+    <nav th:fragment="adminNav" class="admin-sideMenu">
+        <ul>
+            <li><a href="/admin"><i class="fa fa-book" aria-hidden="true"></i> Dash Board</a></li>
+            <li><a href="/admin/addBook"><i class="fa fa-book" aria-hidden="true"></i> Add Book</a></li>
+            <li><a href="/admin/bookList"><i class="fa fa-list-ul" aria-hidden="true"></i> Book List</a></li>
+            <li><a href="/admin/addUser"><i class="fa fa-user-plus" aria-hidden="true"></i> Add user</a></li>
+            <li><a href="/admin/userList"><i class="fa fa-users" aria-hidden="true"></i> User List</a></li>
+            <li><a href="/admin/issueBook"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Issue Book</a></li>
+            <li><a href="/admin/returnBook"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Return Book</a></li>
+            <li><a href="/admin/issueHistory"><i class="fa fa-history" aria-hidden="true"></i> Issue Book History</a></li>
+            <li><a href="/admin/returnHistory"><i class="fa fa-history" aria-hidden="true"></i> Return Book History</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

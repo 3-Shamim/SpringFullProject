@@ -1,0 +1,257 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #dde1e2;
+}
+.errors,
+.searchFieldCheck{
+    color: #ff0000;
+}
+.carousel {
+    margin-bottom: 2rem;
+}
+.loginForm{
+    width: 30%;
+    margin: 100px auto 60px;
+    background: whitesmoke;
+    padding: 40px;
+    min-height: 350px;
+}
+.loginTitle{
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+.loginTitle::after {
+    position: absolute;
+    display: block;
+    content: '';
+    clear: both;
+    width: 70px;
+    height: 2px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 0;
+}
+.loginTitle::before {
+    position: absolute;
+    display: block;
+    content: '';
+    clear: both;
+    width: 70px;
+    height: 2px;
+    background-color: #ffffff;
+    top: 50%;
+    right: 0;
+    margin-top: 2px;
+}
+.loginForm form{
+    margin-bottom: 20px;
+}
+button{
+    cursor: pointer;
+}
+.cancelButton{
+    text-align: center;
+    margin-top: 30px;
+}
+.error{
+    color: #ff0000;
+}
+.image404{
+    overflow: hidden;
+}
+.image404 img{
+    width: 100%;
+}
+.userName{
+    color: white;
+    padding: 20px;
+    text-transform: capitalize;
+}
+.about-full-content{
+    width: 40%;
+    margin: 100px auto;
+}
+.about h2{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.contact h2{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.contact ul{
+    list-style: none;
+    padding: 0;
+}
+.contact ul li{
+    display: table;
+    font-size: 20px;
+    margin: 10px 0;
+    border-bottom: 1px solid #818182;
+}
+.fa-mobile{
+    font-size: 30px;
+}
+.sliderImage img{
+
+}
+.jumbotron{
+    background-color: #0009;
+}
+.navbar {
+    padding: 1rem 4rem;
+}
+.headerTitle{
+    background-color: #007bff;
+    margin: 10px 0;
+    padding: 10px;
+    color: #ffffff;
+}
+.btn-outline-info {
+    color: #dde1e2;
+    background: transparent none;
+    border-color: #dde1e2;
+}
+.btn.btn-outline-info:hover {
+    color: #007bff;
+    border-color: #fff;
+    background: #fff;
+}
+.full-content{
+    overflow: hidden;
+}
+.admin-sideMenu{
+    background-color: #007bff;
+    width: 20%;
+    float: left;
+    min-height: 500px;
+}
+.admin-sideMenu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.admin-sideMenu ul li{
+    margin: 0;
+    border-bottom: 1px solid #ffffff;
+}
+.admin-sideMenu ul li:first-of-type{
+    border-top: 1px solid #ffffff;
+}
+.admin-sideMenu ul li a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.admin-sideMenu ul li a:hover{
+    background-color: #0297ff;
+}
+.admin-content{
+    float: right;
+    overflow: hidden;
+    width: 78%;
+    margin: 0 1%;
+}
+.admin-body{
+    width: 100%;
+    min-height: 430px;
+    padding: 20px;
+    background: aliceblue;
+    overflow: hidden;
+}
+.admin-body form{
+    width: 80%;
+    margin: auto;
+}
+.table{
+    background: #f2faff;
+}
+thead{
+    background-color: #007bff;
+    color: aliceblue;
+}
+tbody{
+    color: #000000;
+}
+.issueTable{
+    margin: 20px;
+}
+.navbar-brand{
+    letter-spacing: 1px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 24px;
+}
+.dashBoardFull{
+    width: 90%;
+    margin: auto;
+}
+.col-3-1{
+    width: 31.33%;
+    float: left;
+    overflow: hidden;
+    margin: 1%;
+}
+.dashBordItem{
+    height: 200px;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+.dashBordItem i{
+    font-size: 50px;
+}
+
+footer{
+margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

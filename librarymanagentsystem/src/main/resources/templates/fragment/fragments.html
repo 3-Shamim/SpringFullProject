@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="../../../../favicon.ico" />
+
+    <!--/*@thymesVar id="title" type=""*/-->
+    <title th:text="${title}"></title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/carousel.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet" />
+
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a class="navbar-brand" href="/LMS/home">Library Management</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().startsWith('/LMS/home') ? 'active':''}">
+                        <a class="nav-link" href="/LMS/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li sec:authorize="hasRole('ADMIN')" class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().startsWith('/admin') ? 'active':''}">
+                        <a class="nav-link" href="/admin">Admin Panel</a>
+                    </li>
+                    <li sec:authorize="hasRole('USER')" class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().startsWith('/user') ? 'active':''}">
+                        <a class="nav-link" href="/user">User Panel</a>
+                    </li>
+                    <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI().startsWith('/LMS/about') ? 'active':''}">
+                        <a class="nav-link" href="/LMS/about">About</a>
+                    </li>
+                </ul>
+                <div sec:authorize-expr="!isFullyAuthenticated()">
+                    <a href="/LMS/login" class="btn btn-outline-info my-2 my-sm-0">Login</a>
+                </div>
+                <div sec:authorize-expr="isFullyAuthenticated()">
+                    <form th:action="@{/logout}" method="POST">
+                        <b class="userName" sec:authentication="name"></b>
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- FOOTER -->
+    <footer th:fragment="footer" class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+
+</body>
+</html>

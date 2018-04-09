@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="Fragments/fragment :: head"></head>
+<body>
+
+<div class="mainBody">
+    <div th:replace="Fragments/fragment :: header"></div>
+
+    <div class="navigation">
+        <nav th:replace="Fragments/fragment :: mainNavigation"></nav>
+    </div>
+    <div class="mainContent">
+        <div class="movieDetailsContent" th:object="${movie}">
+            <div class="movieImage">
+                <img src="/image/default-thumbnail.jpg" alt="MovieImage">
+            </div>
+            <div class="movieDetails">
+                <h5 th:text="'Movie Name : ' + *{name}"></h5>
+                <h5 th:text="'Movie Length : ' + *{length}"></h5>
+                <h5 th:text="'Movie Director : ' + *{director}"></h5>
+                <h5 th:text="'Movie Actor : ' + *{actor}"></h5>
+                <h5 th:text="'Movie Description : ' + *{description}"></h5>
+                <h5 th:text="'Movie Release Date : ' + *{date}"></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer th:replace="Fragments/fragment :: footer"></footer>
+
+</body>
+</html>

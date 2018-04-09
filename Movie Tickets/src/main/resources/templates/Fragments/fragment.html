@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="head">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="../../../../favicon.ico"/>
+
+    <!--/*@thymesVar id="title" type=""*/-->
+    <title th:text="${title}"></title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/fontawesome-all.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/datepicker.css}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet"/>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-datepicker.js}"></script>
+    <script type="text/javascript" th:src="@{/js/custom.js}"></script>
+</head>
+<body>
+    <div th:fragment="header" class="header">
+        <div class="logo">
+            <img src="" alt="logo" />
+        </div>
+        <div class="authorization">
+            <div class="authorized">
+                <form th:action="@{/logout}" method="POST">
+                    <button class="btn btn-outline-success"> Logout </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <nav th:fragment="mainNavigation" class="mainNavigation">
+        <ul>
+            <li><a href="/admin/home">Dash Board</a></li>
+            <li><a href="/admin/movies">Movies</a></li>
+            <li><a href="">Manager Users</a></li>
+        </ul>
+    </nav>
+
+
+
+<!-- FOOTER -->
+<footer th:fragment="footer" class="footer">
+    <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+
+</body>
+</html>

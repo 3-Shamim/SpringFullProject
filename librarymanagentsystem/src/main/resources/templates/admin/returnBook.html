@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="full-content">
+        <nav th:replace="fragment/adminFragments :: adminNav">
+        </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <div class="alert alert-danger" th:if="${bookStatus != null}" th:text="${bookStatus}">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="userSearch">Search User</label>
+                                <input class="form-control" type="text" id="userSearch" name="userSearch"/>
+                                <span class="searchFieldCheck" th:if="${searchFieldCheck != null}" th:text="${searchFieldCheck}"></span>
+                            </div>
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search User</button>
+                        </form>
+                    </div>
+                    <div class="col cancelButton">
+                        <a class="btn btn-outline-danger my-2 my-sm-0" href="/admin/returnBook"> Cancel </a>
+                    </div>
+                </div>
+                <div th:if="${userId} != null"  class="issueTable">
+                    <div class="row">
+                        <div class="col">
+                            <h4>User Details :</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>User Id</th>
+                                    <th th:text="${userId}"></th>
+                                </tr>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th th:text="${userName}"></th>
+                                </tr>
+                                <tr>
+                                    <th>User Email</th>
+                                    <th th:text="${email}"></th>
+                                </tr>
+                                <tr>
+                                    <th>User Address</th>
+                                    <th th:text="${address}"></th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h4>Book Details :</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Book Id</th>
+                                    <th th:text="${bookId}"></th>
+                                </tr>
+                                <tr>
+                                    <th>Book Name</th>
+                                    <th th:text="${bookName}"></th>
+                                </tr>
+                                <tr>
+                                    <th>Book Author</th>
+                                    <th th:text="${author}"></th>
+                                </tr>
+                                <tr>
+                                    <th>Edition</th>
+                                    <th th:text="${edition}"></th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <a th:if="${BookName != null}" class="btn btn-outline-primary my-2 my-sm-0" th:href="@{'/admin/bookReturnForUser/' + ${userId}}"> Return Book </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

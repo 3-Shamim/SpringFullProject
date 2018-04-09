@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head"></head>
+<body>
+
+<header th:replace="fragment/fragments :: header"></header>
+
+<main role="main">
+
+    <div class="full-content">
+        <nav th:replace="fragment/adminFragments :: adminNav">
+        </nav>
+        <div class="admin-content">
+            <h1 class="headerTitle" th:text="${title}"></h1>
+            <div class="admin-body">
+                <div class="alert alert-danger" th:if="${userNameError != null}" th:text="${userNameError}">
+                </div>
+                <form action="" method="POST" th:object="${user}">
+                    <div class="form-group">
+                        <label th:for="userId">User Id</label>
+                        <input class="form-control" th:field="*{userId}" />
+                        <span class="errors" th:errors="*{userId}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="userName">User Name</label>
+                        <input class="form-control" th:field="*{userName}"/>
+                        <span class="errors" th:errors="*{userName}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="email">Email</label>
+                        <input class="form-control" th:field="*{email}"/>
+                        <span class="errors" th:errors="*{email}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="address">Address</label>
+                        <input class="form-control" th:field="*{address}"/>
+                        <span class="errors" th:errors="*{address}"></span>
+                    </div>
+                    <div class="form-group">
+                        <label th:for="phoneNumber">Phone Number</label>
+                        <input class="form-control" th:field="*{phoneNumber}"/>
+                        <span class="errors" th:errors="*{phoneNumber}"></span>
+                    </div>
+
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Update User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+</main>
+
+</body>
+</html>

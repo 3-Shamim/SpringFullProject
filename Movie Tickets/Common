@@ -1,0 +1,12 @@
+// body pattern
+
+<div class="mainBody">
+    <div th:replace="Fragments/fragment :: header"></div>
+
+    <div class="navigation">
+        <nav th:replace="Fragments/fragment :: mainNavigation"></nav>
+    </div>
+    <div class="mainContent">
+
+    </div>
+</div>
