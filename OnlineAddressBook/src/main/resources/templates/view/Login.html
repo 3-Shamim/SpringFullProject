@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head th:replace="fragments/main_layout :: head">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="login_section">
+
+        <div class="loginTitle">
+            <h4>Login Form</h4>
+        </div>
+
+        <div class="alert alert-dismissible alert-danger" th:if="${param.error}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h6>Invalid email and password!</h6>
+        </div>
+        <!--<div class="alert alert-dismissible alert-info" th:if="${param.logout}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h6>Logout successful.</h6>
+        </div>-->
+
+        <form th:action="@{/login}" method="post">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" name="username" placeholder="Email"/>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+            </div>
+
+
+            <div class="loginFormButton">
+                <input type="submit" value="Login" class="btn btn-primary"/>
+                <a th:href="@{/registration}" id="registration" type="button" class="btn btn-info create_account_button">Create Account</a>
+            </div>
+        </form>
+
+
+
+    </div>
+
+   <!-- <div class="registration_Form">
+        <form th:action="@{/registration}" method="post"  th:object="${user}">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registration Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <input class="form-control" th:field="*{email}" placeholder="Email"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" th:field="*{name}" placeholder="Name"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" th:field="*{password}" placeholder="Password"/>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Registration" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>-->
+
+</div>
+
+</body>
+</html>

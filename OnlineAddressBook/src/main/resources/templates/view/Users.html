@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/main_layout}"
+>
+<head>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="card mySpace">
+            <div class="card card-body">
+                <div class="addressSearchGroup">
+                    <div class="addAddress">
+                        <a th:href="@{/addUser}" class="btn btn-primary"> Add User </a>
+                    </div>
+                    <div class="searchAddress">
+                        <form action="/users" class="form-inline my-2 my-lg-0">
+                            <input id="searchUser" class="form-control mr-sm-2" placeholder="Search" type="text" name="name">
+                            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td>
+                            <ul th:each="userRole : ${user.roles}">
+                                <li th:text="${userRole.role}"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a th:href="@{'/userEdit/' + ${user.email}}"class="btn btn-secondary">Edit</a>
+                            <button id="userDelEmail" onclick="delAddressBook()" th:value="${user.email}" type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

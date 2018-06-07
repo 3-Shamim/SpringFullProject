@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/main_layout}"
+>
+<head>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="card mySpace">
+            <div class="card card-body">
+                <div class="addressSearchGroup">
+                    <div class="addAddress">
+                        <a th:href="@{/addAddress}" class="btn btn-primary"> Add Address </a>
+                    </div>
+                    <div class="searchAddress">
+                        <form action="/addresses" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" placeholder="Search" type="text" name="name">
+                            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Current Address</th>
+                        <th>Home Address</th>
+                        <th>Contact Number</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="address:${addresses}">
+                        <td th:text="${address.name}"></td>
+                        <td th:text="${address.email}"></td>
+                        <td th:text="${address.currentAddress}"></td>
+                        <td th:text="${address.homeAddress}"></td>
+                        <td th:text="${address.number}"></td>
+                        <!--<td><a th:href="@{'/addressEdit/' + ${address.id}}" id="editAddressBook" class="btn btn-secondary">Edit</a> </td>-->
+                        <td>
+                            <a th:href="@{'/addressEdit/' + ${address.id}}"class="btn btn-secondary">Edit</a>
+                            <button id="delId" onclick="delAddressBook()" th:value="${address.id}" type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+       <!-- <form th:action="@{/registration}" method="post" th:object="${addressBook}">
+            <div class="modal fade" id="editAddressBookModal" tabindex="-1" role="dialog" aria-labelledby="editAddressBookModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editAddressBookModalLabel">Registration Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="id" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="name"  placeholder="Name"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="email"  placeholder="Email"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="currentAddress"  placeholder="Current Address"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="homeAddress"  placeholder="Home Address"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="number"  placeholder="Contact Number"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="aboutPerson"  placeholder="About Person"/>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" value="Registration" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>-->
+
+    </div>
+
+</div>
+
+</body>
+</html>

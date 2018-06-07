@@ -1,0 +1,120 @@
+body {
+    background: #dfe4ea;
+}
+
+.mySpace {
+    margin: 10px;
+}
+.sweet-modal-content {
+    color: #000000;
+}
+/*---------- Log in && Registration --------------*/
+
+.login_section, .registration_section {
+    width: 30%;
+    margin: 150px auto auto;
+    padding: 20px 40px;
+    background: #ffffff;
+}
+.loginTitle, .registrationTitle{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginTitle:after, .registrationTitle:after {
+    content: '';
+    display: block;
+    clear: both;
+    border-bottom: 1px solid #0c7cd5;
+}
+.registrationTitle h4{
+    font-size: 24px;
+    color: #0c7cd5;
+}
+
+.loginFormButton {
+    margin: 5px 0;
+}
+
+.registration_Form .modal-header {
+    border-bottom: 2px solid #2196f3;
+}
+.registration_Form .modal-header h5 {
+    color: #2196f3;
+    font-size: 24px;
+}
+
+.registration_cancel_button,
+.create_account_button {
+    margin-left: 20px;
+}
+
+/*----------- Addresses --------------*/
+
+.addAddressForm {
+    width: 60%;
+    background: #ffffff;
+    padding: 20px;
+    margin: 40px auto;
+}
+
+.addressSearchGroup {
+    display: block;
+    overflow: hidden;
+}
+.addressSearchGroup .addAddress{
+    margin: 10px 5px;
+    float: left;
+}
+.addressSearchGroup .searchAddress {
+    margin: 10px 5px;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

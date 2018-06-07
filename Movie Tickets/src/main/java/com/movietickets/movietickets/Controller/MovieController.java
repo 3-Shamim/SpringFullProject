@@ -1,7 +1,9 @@
 package com.movietickets.movietickets.Controller;
 
 import com.movietickets.movietickets.Model.Movie;
+import com.movietickets.movietickets.Model.Seat;
 import com.movietickets.movietickets.Repository.MovieRepository;
+import com.movietickets.movietickets.Repository.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ public class MovieController {
 
     @Autowired
     private MovieRepository movieRepository;
+
+    private SeatService seatService = new SeatService();
 
 //    Movie Retrieve
     @RequestMapping(value = "movies")
@@ -43,6 +47,9 @@ public class MovieController {
             model.addAttribute("title", "Add Movie");
             return "AdminFeatures/AddMovie";
         }
+
+        movie.setSeats(seatService.InitializeSeat());
+
         movieRepository.save(movie);
 
         return "redirect:/admin/movies";
@@ -88,4 +95,27 @@ public class MovieController {
         return "redirect:/admin/movies";
     }
 
+//    Movie Seat Booking
+
+    @RequestMapping(value = "movieBooking",method = RequestMethod.GET)
+    @ResponseBody
+    private Movie bookingMovie(@RequestParam(name = "seatId", required = false) int[] seatId , @RequestParam(name = "movieId") int movieId)
+    {
+        Movie m = movieRepository.getOne(movieId);
+
+
+        for (Seat seat : m.getSeats()) {
+            for (int i: seatId) {
+                if(seat.getSeatNumber() == i)
+                {
+                    seat.setSold(true);
+                }
+            }
+        }
+
+
+        movieRepository.save(m);
+
+        return m;
+    }
 }

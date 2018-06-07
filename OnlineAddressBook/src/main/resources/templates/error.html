@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head th:replace="fragments/main_layout :: head">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="container mySpace">
+        <div class="jumbotron">
+            <div>
+
+                There was an error  |<span th:text="${message}"></span>| <span th:text="${status}" class="text text-danger"></span>
+
+            </div>
+            <div>
+                Please contact Shamim if you have reached this far!!!!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

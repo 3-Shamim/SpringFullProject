@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/main_layout}"
+>
+<head>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="addAddressForm">
+            <form method="post" th:object="${addressBook}">
+                <div class="form-group">
+                    <label th:for="id" class="form-control-label">Name</label>
+                    <input class="form-control"  th:field="*{id}" />
+                </div>
+                <div class="form-group">
+                    <label th:for="name" class="form-control-label">Name</label>
+                    <input class="form-control"  th:field="*{name}" />
+                    <div class="text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label th:for="homeAddress" class="form-control-label">Home Address</label>
+                    <input class="form-control"  th:field="*{homeAddress}" />
+                </div>
+                <div class="form-group">
+                    <label th:for="currentAddress" class="form-control-label">Current Address</label>
+                    <input class="form-control"  th:field="*{currentAddress}" />
+                </div>
+                <div class="form-group">
+                    <label th:for="number" class="form-control-label">Number</label>
+                    <input class="form-control"  th:field="*{number}" />
+                </div>
+                <div class="form-group">
+                    <label th:for="email" class="form-control-label">Email</label>
+                    <input class="form-control"  th:field="*{email}" />
+                </div>
+                <div class="form-group">
+                    <label th:for="aboutPerson" class="form-control-label">About Person</label>
+                    <input class="form-control" th:field="*{aboutPerson}" />
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-primary" />
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

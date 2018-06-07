@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
+<head th:fragment="head">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="../../../../favicon.ico"/>
+
+    <!--/*@thymesVar id="title" type=""*/-->
+    <title th:text="${title}"></title>
+
+    <link rel="stylesheet" th:href="@{/materia/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/sweetalert.min.css}">
+    <!--<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}">-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <!--<script th:src="@{/js/popper.min.js}"></script>-->
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/sweetalert.all.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div layout:fragment="content">
+
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+</body>
+</html>
